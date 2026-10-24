@@ -1,5 +1,14 @@
 "use strict";
 
+/**
+* Calculates the total volume of nested spheres.
+*
+* @param {[number, number, number]} data - An array of parameters: [number_of_spheres, outer_diameter, wall_thickness]
+* @param {number} data[0] - countBall: The number of spheres.
+* @param {number} data[1] - outDiameter: The outer diameter of the smallest sphere.
+* @param {number} data[2] - wall: The wall thickness of the smallest sphere.
+* @returns {number} The total volume of all spheres in m³, rounded to 3 decimal places.
+*/
 function getTotalVolumes(data) {
   const [countBall, outDiametr, wall] = data;
   let totalVolumes = 0;
