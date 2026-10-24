@@ -1,4 +1,5 @@
 "use strict";
+
 let countBall = 12;
 let outDiametr = 50; // sm
 let wall = 1; // sm
@@ -11,3 +12,4 @@ for (let i = 0; i < countBall; i++) {
 }
 totalVolume *= 1e-6;
 console.log(`totalVolume : ${totalVolume.toFixed(3)} m³.`);
+
