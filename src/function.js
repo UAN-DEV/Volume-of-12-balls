@@ -10,30 +10,31 @@
  * @returns {number} The total volume of all spheres in m³, rounded to 3 decimal places.
  */
 function getTotalVolumes(data) {
-  const [countBall, outDiametr, wall] = data;
+  const [COUNT_BALL, OUT_DIAMETER, WALL] = data;
+  let innerDiametr = OUT_DIAMETER - 2 * WALL;
   let totalVolumes = 0;
-  let innerDiametr = outDiametr - 2 * wall;
 
-  for (let i = 0; i < countBall; i++) {
-    totalVolumes += (Math.PI * (innerDiametr + 2 * i * wall) ** 3) / 6;
+  for (let i = 0; i < COUNT_BALL; i++) {
+    totalVolumes += (Math.PI * (innerDiametr + 2 * i * WALL) ** 3) / 6;
   }
   totalVolumes = (totalVolumes * 1e-6).toFixed(3);
   return totalVolumes;
 }
 
 while (true) {
-  const innData = prompt(
+  const INN_DATA = prompt(
     `Enter, separated by spaces: 
       number of spheres,
       their outer diameter of the smallest sphere (sm), 
-      and the wall thickness  (sm)`,
-    "for ex.: 12 50 1",
+      and the wall thickness  (sm)
+      for ex.: 12 50 1`,
+    "12 50 1",
   )
     .split(" ")
-    .filter((item) => Number(item.trim()));
+    .map((item) => Number(item));
 
-  if (innData.length === 3) {
-    alert(`totalVolume : ${getTotalVolumes(innData)} m³.`);
+  if (INN_DATA.length === 3) {
+    alert(`totalVolume : ${getTotalVolumes(INN_DATA)} m³.`);
     break;
   }
   if (
