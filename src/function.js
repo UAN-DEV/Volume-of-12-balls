@@ -26,12 +26,11 @@ while (true) {
     `Enter, separated by spaces: 
       number of spheres,
       their outer diameter of the smallest sphere (sm), 
-      and the wall thickness  (sm)
-      for ex.: 12 50 1`,
-    "12 50 1",
+      and the wall thickness  (sm)`,
+    "for ex.: 12 50 1",
   )
     .split(" ")
-    .map((item) => Number(item));
+    .filter((item) => Number(item.trim()));
 
   if (INN_DATA.length === 3) {
     alert(`totalVolume : ${getTotalVolumes(INN_DATA)} m³.`);
